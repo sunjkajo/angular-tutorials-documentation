@@ -1,0 +1,38 @@
+<?php
+/*
+ * This file is part of the Active Collab project.
+ *
+ * (c) A51 doo <info@activecollab.com>. All rights reserved.
+ */
+defined('CONFIG_PATH') or define('CONFIG_PATH', __DIR__);
+/**
+ * Configuration file.
+ */
+define('ROOT', dirname(__DIR__) . '/activecollab');
+define('ANGIE_PATH', ROOT . '/current/angie');
+if (array_key_exists('HTTP_HOST', $_SERVER)) {
+    define('ROOT_URL', 'http://' . $_SERVER['HTTP_HOST']);
+} else {
+    define('ROOT_URL', 'http://localhost');
+}
+define('URL_BASE', ROOT_URL . '/');
+define('ASSETS_URL', ROOT_URL . '/assets');
+const PATH_INFO_THROUGH_QUERY_STRING = false;
+const PUBLIC_AS_DOCUMENT_ROOT = true;
+define('FRONTEND_PATH', ROOT . '/current/frontend');
+const DB_HOST = '127.0.0.1';
+const DB_USER = 'root';
+const DB_PASS = '';
+const DB_NAME = 'activecollab';
+const SEARCH_ADAPTER = 'elastic_search';
+const ELASTIC_SEARCH_HOSTS = '127.0.0.1:9200';
+// Application URL
+const ADMIN_EMAIL = 'mladen.stepanic@activecollab.com';
+const APPLICATION_UNIQUE_KEY = 'TESTLICENSETESTLICENSETESTLICENSE';
+const COOKIE_DOMAIN = '';
+const APPLICATION_MODE = 'development';
+const ON_DEMAND_APPLICATION_CHANNEL = 2;
+const ASSETS_ARE_BUILT = false;
+const LICENSE_KEY = 'TESTLICENSETESTLICENSETESTLICENSE/145040';
+require_once __DIR__ . '/version.php';
+require_once __DIR__ . '/defaults.php';
